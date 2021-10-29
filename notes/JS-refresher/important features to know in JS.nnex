@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE NixNote-Export>
+<nixnote-export version="2" exportType="export" application="NixNote" applicationVersion="2.x">
+    <Note>
+        <Guid>43bbba28-b599-4b38-ab5d-e3bd2f378dc5</Guid>
+        <Title>Important to know in JS</Title>
+        <Content><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE en-note SYSTEM 'http://xml.evernote.com/pub/enml2.dtd'><en-note style=
+"word-wrap: break-word; -webkit-nbsp-mode: space; -webkit-line-break: after-white-space;">
+
+<ul>
+<li>points found in Youtube Video:</li>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=a00NRSFgHsY" title=
+"https://www.youtube.com/watch?v=a00NRSFgHsY">https://www.youtube.com/watch?v=a00NRSFgHsY</a><br />
+</li>
+</ul>
+</ul>
+<div><br /></div>
+<div><span style="background-color: rgb(255, 255, 0);">double vs
+triple equals</span></div>
+<div>
+<ul>
+<li>double == converts data automatically, e.g.</li>
+<ul>
+<li>"2" == 2</li>
+<ul>
+<li>equals to true</li>
+</ul>
+<li>"2" === 2&nbsp;</li>
+<ul>
+<li>does not</li>
+</ul>
+</ul>
+<li>another aspect: primitives for quality versus objects</li>
+<ul>
+<li>primitives vs objects</li>
+<li>that object in memory</li>
+</ul>
+</ul>
+<div><br /></div>
+<div><span style="background-color: rgb(255, 255, 0);">Async/Await
+Javascript</span></div>
+<div>
+<ul>
+<li>more on it in&nbsp;<a href=
+"https://www.youtube.com/watch?v=670f71LTWpM" title=
+"https://www.youtube.com/watch?v=670f71LTWpM">https://www.youtube.com/watch?v=670f71LTWpM</a></li>
+</ul>
+<div><br /></div>
+</div>
+<div><span style="background-color: rgb(255, 255, 0);">Error
+Handling</span></div>
+<div>
+<ul>
+<li>think about how people can mess up your function calls!</li>
+<ul>
+<li>example: type checks!</li>
+</ul>
+<li>error handling</li>
+<ul>
+<li>I know about it: a refresher of Handling errors in
+Typescripts</li>
+<li>different ways:</li>
+<ul>
+<li>returning null</li>
+<li>throwing exception</li>
+<li>returning exceptions</li>
+<li>Option Type</li>
+</ul>
+<li>what of that is available in JS ES &gt;=6?</li>
+</ul>
+</ul>
+<div><span style="background-color: rgb(255, 255, 0);">ES6
+Syntax</span></div>
+<div>
+<ul>
+<li>destructuring properties etc. should be familiar</li>
+<li>spread operator etc.</li>
+<ul>
+<li>I should know from Typescript learning!</li>
+</ul>
+</ul>
+<div><br /></div>
+<div><span style="background-color: rgb(255, 255, 0);">Array
+Methods</span></div>
+<div>
+<ul>
+<li>filter</li>
+<li>map</li>
+<li>some</li>
+<li>sort</li>
+<li>reduce</li>
+<li>every</li>
+<ul>
+<li>those functions are incredibly useful and commonly used</li>
+<li>and can be ticky to understand</li>
+</ul>
+<li>more on it:</li>
+<ul>
+<li><a href=
+"https://www.youtube.com/watch?v=3LOEGS4qcRM&amp;list=PLDlWc9AfQBfZGZXFb_1tcRKwtCavR7AfT"
+title=
+"https://www.youtube.com/watch?v=3LOEGS4qcRM&amp;list=PLDlWc9AfQBfZGZXFb_1tcRKwtCavR7AfT">
+https://www.youtube.com/watch?v=3LOEGS4qcRM&amp;list=PLDlWc9AfQBfZGZXFb_1tcRKwtCavR7AfT</a><br />
+</li>
+</ul>
+</ul>
+<div><br /></div>
+<div><br /></div>
+</div>
+<div><br /></div>
+</div>
+<div><br /></div>
+</div>
+<div><br /></div>
+</div>
+</en-note>]]></Content>
+        <ContentLength>2749</ContentLength>
+        <Created>1634683970475</Created>
+        <Updated>1634685831540</Updated>
+        <Active>true</Active>
+        <UpdateSequenceNumber>0</UpdateSequenceNumber>
+        <NotebookGuid>d0d14f74-6b64-483b-8f9d-b6474c5eb883</NotebookGuid>
+        <Attributes>
+            <Author>wolfi</Author>
+        </Attributes>
+        <Dirty>true</Dirty>
+    </Note>
+</nixnote-export>
