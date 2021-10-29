@@ -2,28 +2,29 @@ import React, { Component } from 'react';
 
 class Counter extends React.Component {
     state = { 
-        count: 0,
-        tags: ['tags1', 'tags2', 'tags3']
+        count: this.props.value
     };
 
-    constructor() {
-        super();
-        this.handleIncrement = this.handleIncrement.bind(this);
-    }
+    //constructor() {
+    //super();
+    //    this.handleIncrement = this.handleIncrement.bind(this);
+    //}
 
-    handleIncrement() {
-        console.log('Increment Clicked', this);        
-
+    handleIncrement = () => {
+        this.setState({count: this.state.count+1 });       
     }
 
     render() { 
         return (
             <div>
+                <h4>{this.props.id}</h4>
+
                 <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
-                <button onClick={this.handleIncrement} className="btn btn-secondary btn-sm">increment</button>
-                <ul>
-                    { this.state.tags.map(tag => <li key={tag}>{tag}</li>) }
-                </ul>
+                <button 
+                    onClick={() => this.handleIncrement()} 
+                    className="btn btn-secondary btn-sm"
+                    >increment
+                </button>
             </div>
         );
     }
@@ -35,7 +36,7 @@ class Counter extends React.Component {
         return classes;
     }
 
-    formatCount() {
+    formatCount() { 
         const { count } = this.state;
         return count === 0 ? 'Zero' : count;
     }

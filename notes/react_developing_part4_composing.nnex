@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE NixNote-Export>
+<nixnote-export version="2" exportType="export" application="NixNote" applicationVersion="2.x">
+    <Note>
+        <Guid>c71d817b-2d94-48fe-bb81-ea04d205bbe9</Guid>
+        <Title>ReactJS - React Tutorial for Beginners - part 4 - composing Components</Title>
+        <Content><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE en-note SYSTEM 'http://xml.evernote.com/pub/enml2.dtd'><en-note style=
+"word-wrap: break-word; -webkit-nbsp-mode: space; -webkit-line-break: after-white-space;">
+
+<div>you will learn</div>
+<div>
+<ul>
+<li>Pass Data<br /></li>
+<li>Raise and Handle Events<br /></li>
+<li>Multiple Components in Sync<br /></li>
+<li>Functional Components</li>
+<li>Lifecycle Hooks</li>
+</ul>
+</div>
+<br />
+<div><br /></div>
+<div>
+<div>Composing Components</div>
+<div>
+<ul>
+<li>in our application:</li>
+<ul>
+<li>instead of rending Counter in index.js, we put Counters
+there</li>
+<li>our Component tree will look like this:</li>
+<ul>
+<li>Counters</li>
+<li>Counter</li>
+</ul>
+</ul>
+<li>in Counters we will return multiple counter components in
+render return<br /></li>
+<ul>
+<li>simple example - hardcoding the components into
+counters.js</li>
+<ul>
+<li>
+<div style=
+"color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: 'Droid Sans Mono', monospace, monospace, 'Droid Sans Fallback'; font-size: 14px; line-height: 19px; white-space: pre;">
+<div><span style="color: #569cd6;">class</span> <span style=
+"color: #4ec9b0;">Counters</span> <span style=
+"color: #569cd6;">extends</span> <span style=
+"color: #4ec9b0;">React</span>.<span style=
+"color: #4ec9b0;">Component</span> {</div>
+<div><span style="color: #dcdcaa;">render</span>() {</div>
+<div><span style="color: #c586c0;">return</span> (<span style=
+"color: #808080;">&lt;</span><span style=
+"color: #569cd6;">div</span><span style=
+"color: #808080;">&gt;</span></div>
+<div><span style="color: #808080;">&lt;</span><span style=
+"color: #4ec9b0;">Counter</span> <span style=
+"color: #808080;">/&gt;</span></div>
+<div><span style="color: #808080;">&lt;</span><span style=
+"color: #4ec9b0;">Counter</span> <span style=
+"color: #808080;">/&gt;</span></div>
+<div><span style="color: #808080;">&lt;</span><span style=
+"color: #4ec9b0;">Counter</span> <span style=
+"color: #808080;">/&gt;</span></div>
+<div><span style="color: #808080;">&lt;</span><span style=
+"color: #4ec9b0;">Counter</span> <span style=
+"color: #808080;">/&gt;</span></div>
+<div><span style="color: #808080;">&lt;/</span><span style=
+"color: #569cd6;">div</span><span style=
+"color: #808080;">&gt;</span>);</div>
+<div>}</div>
+<div>}</div>
+</div>
+</li>
+</ul>
+<li>more dynamic with array mapping</li>
+<ul>
+<li>
+<div style=
+"color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: 'Droid Sans Mono', monospace, monospace, 'Droid Sans Fallback'; font-size: 14px; line-height: 19px; white-space: pre;">
+<div><span style="color: #c586c0;">return</span> (<span style=
+"color: #808080;">&lt;</span><span style=
+"color: #569cd6;">div</span><span style=
+"color: #808080;">&gt;</span></div>
+<div><span style="color: #569cd6;">{</span><span style=
+"color: #569cd6;">this</span>.<span style=
+"color: #9cdcfe;">state</span>.<span style=
+"color: #9cdcfe;">counters</span>.<span style=
+"color: #dcdcaa;">map</span>(<span style=
+"color: #9cdcfe;">counter</span> <span style=
+"color: #569cd6;">=&gt;</span> <span style=
+"color: #808080;">&lt;</span><span style=
+"color: #4ec9b0;">Counter</span> <span style=
+"color: #9cdcfe;">key</span>=<span style=
+"color: #569cd6;">{</span><span style=
+"color: #9cdcfe;">counter</span>.<span style=
+"color: #9cdcfe;">id</span><span style="color: #569cd6;">}</span>
+<span style="color: #808080;">/&gt;</span>)<span style=
+"color: #569cd6;">}</span></div>
+<div><span style="color: #808080;">&lt;/</span><span style=
+"color: #569cd6;">div</span><span style=
+"color: #808080;">&gt;</span>);</div>
+</div>
+</li>
+</ul>
+<li>still to be worked on:</li>
+<ul>
+<li>all is initialized with zero</li>
+<li>the value we set in state, is not reflected</li>
+</ul>
+</ul>
+</ul>
+</div>
+<div><br /></div>
+<div>Passing Data to Components</div>
+<div>
+<ul>
+<li>&nbsp; <span style=
+"font-family: 'Droid Sans Mono', monospace, monospace, 'Droid Sans Fallback'; font-size: 14px; white-space: pre; background-color: rgb(30, 30, 30); color: rgb(156, 220, 254);">
+console</span><span style=
+"color: rgb(212, 212, 212); font-family: 'Droid Sans Mono', monospace, monospace, 'Droid Sans Fallback'; font-size: 14px; white-space: pre; background-color: rgb(30, 30, 30);">.</span><span style="font-family: 'Droid Sans Mono', monospace, monospace, 'Droid Sans Fallback'; font-size: 14px; white-space: pre; background-color: rgb(30, 30, 30); color: rgb(220, 220, 170);">log</span><span style="color: rgb(212, 212, 212); font-family: 'Droid Sans Mono', monospace, monospace, 'Droid Sans Fallback'; font-size: 14px; white-space: pre; background-color: rgb(30, 30, 30);">(</span><span style="font-family: 'Droid Sans Mono', monospace, monospace, 'Droid Sans Fallback'; font-size: 14px; white-space: pre; background-color: rgb(30, 30, 30); color: rgb(206, 145, 120);">'props'</span><span style="color: rgb(212, 212, 212); font-family: 'Droid Sans Mono', monospace, monospace, 'Droid Sans Fallback'; font-size: 14px; white-space: pre; background-color: rgb(30, 30, 30);">,</span>
+<span style=
+"font-family: 'Droid Sans Mono', monospace, monospace, 'Droid Sans Fallback'; font-size: 14px; white-space: pre; background-color: rgb(30, 30, 30); color: rgb(86, 156, 214);">
+this</span><span style=
+"color: rgb(212, 212, 212); font-family: 'Droid Sans Mono', monospace, monospace, 'Droid Sans Fallback'; font-size: 14px; white-space: pre; background-color: rgb(30, 30, 30);">.</span><span style="font-family: 'Droid Sans Mono', monospace, monospace, 'Droid Sans Fallback'; font-size: 14px; white-space: pre; background-color: rgb(30, 30, 30); color: rgb(79, 193, 255);">props</span><span style="color: rgb(212, 212, 212); font-family: 'Droid Sans Mono', monospace, monospace, 'Droid Sans Fallback'; font-size: 14px; white-space: pre; background-color: rgb(30, 30, 30);">);</span></li>
+<ul>
+<li>every component has a property called props</li>
+<li>basically a plain JS object, that includes all the attributes
+that we set in counter component</li>
+<li>in our example: value and selected attributes</li>
+</ul>
+<li>Tipp:</li>
+<ul>
+<li>select all same words e.g. variable name and edit all</li>
+<ul>
+<li>select word -&gt; press F2 -&gt; enter new name</li>
+</ul>
+</ul>
+<li>in our counters component we had</li>
+<ul>
+<li>
+<div style=
+"color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: 'Droid Sans Mono', monospace, monospace, 'Droid Sans Fallback'; font-size: 14px; line-height: 19px; white-space: pre;">
+<span style="color: #808080;">&lt;</span><span style=
+"color: #4ec9b0;">Counter</span> <span style=
+"color: #9cdcfe;">key</span>=<span style=
+"color: #569cd6;">{</span><span style=
+"color: #9cdcfe;">counter</span>.<span style=
+"color: #9cdcfe;">id</span><span style="color: #569cd6;">}</span>
+<span style="color: #9cdcfe;">value</span>=<span style=
+"color: #569cd6;">{</span><span style=
+"color: #9cdcfe;">counter</span>.<span style=
+"color: #9cdcfe;">value</span><span style=
+"color: #569cd6;">}</span> <span style=
+"color: #9cdcfe;">selected</span>=<span style=
+"color: #569cd6;">{true}</span> <span style=
+"color: #808080;">/&gt;</span>)<span style=
+"color: #569cd6;">}</span></div>
+</li>
+<li>Note: selected={true} we musn't put, since it is selected by
+default!</li>
+</ul>
+<li><br /></li>
+</ul>
+</div>
+<div><br /></div>
+<div>Passing Children</div>
+<div>
+<ul>
+<li>sometime we want to pass content between the opening and
+closing tags</li>
+<li>for example we want to pass an h4 with an Title</li>
+<ul>
+<li>
+<div style=
+"color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: 'Droid Sans Mono', monospace, monospace, 'Droid Sans Fallback'; font-size: 14px; line-height: 19px; white-space: pre;">
+<div><span style="color: #808080;">&lt;</span><span style=
+"color: #4ec9b0;">Counter</span> <span style=
+"color: #9cdcfe;">key</span>=<span style=
+"color: #569cd6;">{</span><span style=
+"color: #9cdcfe;">counter</span>.<span style=
+"color: #9cdcfe;">id</span><span style="color: #569cd6;">}</span>
+<span style="color: #9cdcfe;">value</span>=<span style=
+"color: #569cd6;">{</span><span style=
+"color: #9cdcfe;">counter</span>.<span style=
+"color: #9cdcfe;">value</span><span style=
+"color: #569cd6;">}</span> <span style=
+"color: #808080;">&gt;</span></div>
+<div><span style="color: #808080;">&lt;</span><span style=
+"color: #569cd6;">h4</span><span style=
+"color: #808080;">&gt;</span>Title<span style=
+"color: #808080;">&lt;/</span><span style=
+"color: #569cd6;">h4</span><span style=
+"color: #808080;">&gt;</span></div>
+<div><span style="color: #808080;">&lt;/</span><span style=
+"color: #4ec9b0;">Counter</span><span style=
+"color: #808080;">&gt;</span></div>
+</div>
+</li>
+</ul>
+<li>real world example when we use dialog boxes</li>
+<ul>
+<li>in this case: you would use the children prop</li>
+</ul>
+<li>lets render the children prop in counter component</li>
+<ul>
+<li>going forward to next lectures we will not the code we wrote in
+this lecture!</li>
+</ul>
+</ul>
+<div><br /></div>
+</div>
+<div><br /></div>
+</div>
+</en-note>]]></Content>
+        <ContentLength>9016</ContentLength>
+        <Created>1635538760542</Created>
+        <Updated>1635543766099</Updated>
+        <Active>true</Active>
+        <UpdateSequenceNumber>0</UpdateSequenceNumber>
+        <NotebookGuid>d0d14f74-6b64-483b-8f9d-b6474c5eb883</NotebookGuid>
+        <Attributes>
+            <Author>wolfi</Author>
+        </Attributes>
+        <Dirty>true</Dirty>
+    </Note>
+</nixnote-export>
