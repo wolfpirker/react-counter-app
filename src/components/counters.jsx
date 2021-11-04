@@ -11,6 +11,15 @@ class Counters extends React.Component {
     ],
   };
 
+  handleIncrement = (counter) => {
+    // cloning counters -> the objects are exactly the same as above
+    const counters = [...this.state.counters];
+    const index = counters.indexOf(counter);
+    counters[index] = { ...counter };
+    counters[index].value++;
+    this.setState({ counters });
+  };
+
   handleReset = () => {
     const counters = this.state.counters.map((c) => {
       c.value = 0;
@@ -37,10 +46,9 @@ class Counters extends React.Component {
           <Counter
             key={counter.id}
             onDelete={this.handleDelete}
+            onIncrement={this.handleIncrement}
             counter={counter}
-          >
-            <h4>Counter #{counter.id}</h4>
-          </Counter>
+          />
         ))}
       </div>
     );
