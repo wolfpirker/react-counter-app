@@ -14,6 +14,19 @@ class App extends React.Component {
     ],
   };
 
+  constructor() {
+    // called once when component created
+    // used e.g. to set state what we receive from the outside
+    super();
+    console.log('App - Constructor');
+    // Note: in the constructor we set the state directly; NOT with setState()!
+    //this.state = this.props.something;
+  }
+
+  componentDidMount() {
+    console.log('App - Mounted');
+  }
+
   handleIncrement = (counter) => {
     // cloning counters -> the objects are exactly the same as above
     const counters = [...this.state.counters];
@@ -37,6 +50,7 @@ class App extends React.Component {
   };
 
   render() {
+    console.log('App - Rendered');
     return (
       <React.Fragment>
         <NavBar totalCounters={this.state.counters.filter(c => c.value > 0).length} />
